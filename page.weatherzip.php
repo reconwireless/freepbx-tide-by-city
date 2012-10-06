@@ -34,8 +34,8 @@ $featurecode = $fcc->getCodeActive();
 ?>
 <form method="POST" action="">
 	<br><h2><?php echo _("U.S. Weather by Zipcode")?><hr></h5></td></tr>
-Weather by Zip Code allows you to retrieve current weather information from any touchtone phone using nothing more than your PBX connected to the Internet.  When prompted you key your U.S. Zip Code, the report is downloaded, converted to an audio file, and played back to you.<br><br>
-Current conditions and/or forecast for the chosen Zip Code will then will be retrieved from the selected service using the selected text-to-speech engine. <br><br>
+Tide by City allows you to retrieve current tide information from any touchtone phone using nothing more than your PBX connected to the Internet.  When prompted you key your U.S. Zip Code, the report is downloaded, converted to an audio file, and played back to you.<br><br>
+Current tide conditions and/or forecast for the chosen Zip Code will then will be retrieved from the selected service using the selected text-to-speech engine. <br><br>
 The feature code to access this service is currently set to <b><?PHP print $featurecode; ?></b>.  This value can be changed in Feature Codes. <br>
 
 <br><h5>User Data:<hr></h5>
@@ -63,7 +63,7 @@ echo "<option".(($date[0]=='wunderground-googletts')?' selected':'').">wundergro
 <br><br><input type="submit" value="Submit" name="B1"><br>
 
 <center><br>
-The module is maintained by the developer community at <a target="_blank" href="http://pbxossa.org"> PBX Open Source Software Alliance</a>.  Support, documentation and current versions are available at the module <a target="_blank" href="https://github.com/POSSA/freepbx-weather-by-zip">dev site</a></center>
+The module is forked by reconwireless from the developer community at <a target="_blank" href="http://pbxossa.org"> PBX Open Source Software Alliance</a>.  Support, documentation and current versions are available at the module <a target="_blank" href="https://github.com/POSSA/freepbx-weather-by-zip">dev site</a></center>
 <?php
 print '<p align="center" style="font-size:11px;">The Weather by Zip and Google Weather scripts were created and are currently maintaned by <a target="_blank" href="http://www.nerdvittles.com">Nerd Vittles</a>.';
 
