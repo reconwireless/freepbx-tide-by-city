@@ -19,7 +19,7 @@ if ( (isset($amp_conf['ASTVARLIBDIR'])?$amp_conf['ASTVARLIBDIR']:'') == '') {
 }
 $tts_astsnd_path = $astlib_path."/sounds/tts/";
 
-/* this function unused??
+
 function tidecity_tidecity($c) {
 	global $ext;
 	global $asterisk_conf;
@@ -33,7 +33,7 @@ function tidecity_tidecity($c) {
 	$ext->addInclude('from-internal-additional', $id); // Add the include from from-internal
 	$ext->add($id, $c, '', new ext_goto('1', 's', $ttsengine));
 }
-  end unused section */
+
 
 function tidecity_get_config($engine) {
 	$modulename = 'tidecity';
@@ -64,6 +64,8 @@ function tidecity_get_config($engine) {
 }
 
 function tideoptions_getconfig() {
+	#print_r($results);
+	#die();
 	require_once 'DB.php';
 	$sql = "SELECT * FROM tideoptions LIMIT 1";
 	$results= sql($sql, "getAll");
