@@ -1,2 +1,2 @@
 DROP TABLE IF EXISTS `zipcodes`;
-DROP TABLE IF EXISTS `weatheroptions`;
+DROP TABLE IF EXISTS `tideoptions`;

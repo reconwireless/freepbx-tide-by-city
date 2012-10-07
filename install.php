@@ -1,4 +1,4 @@
-Installing U.S. Weather by Zip Code Module<br>
+Installing U.S. Tide by City Module<br>
 <h5>Zip Code Database (v1.0)</h5>
 This zip database is provided free to anyone who wants
 it with the request that anyone who benefits from it
@@ -28,7 +28,7 @@ if (DB::IsError($check)) {
 
 // Add dialplan include to asterisk conf file
 $filename = '/etc/asterisk/extensions_custom.conf';
-$includecontent = "#include custom_weatherzip.conf\n";
+$includecontent = "#include custom_tidecity.conf\n";
 
 // First we need to look for existing occurances of the include line from past sloppy uninstall/upgrade and remove all of them
 function replace_file($path, $string, $replace)
@@ -74,13 +74,13 @@ if (is_writable($filename)) {
 }
 ?>Verifying / Installing cronjob into the FreePBX cron manager.<br>
 <?php
-$sql = "SELECT * FROM `cronmanager` WHERE `module` = 'weatherzip' LIMIT 1;";
+$sql = "SELECT * FROM `cronmanager` WHERE `module` = 't' LIMIT 1;";
 
 $res = $db->query($sql);
 
 if($res->numRows() != 1)
 {
-$sql = "INSERT INTO	cronmanager (module,id,time,freq,command) VALUES ('weatherzip','every_day',23,24,'/usr/bin/find /var/lib/asterisk/sounds/tts -name \"*.wav\" -mtime +1 -exec rm {} \\\;')";
+$sql = "INSERT INTO	cronmanager (module,id,time,freq,command) VALUES ('tidecity','every_day',23,24,'/usr/bin/find /var/lib/asterisk/sounds/tts -name \"*.wav\" -mtime +1 -exec rm {} \\\;')";
 
 $check = $db->query($sql);
 if (DB::IsError($check))
@@ -95,9 +95,9 @@ if (!is_dir ($parm_tts_dir)) mkdir ($parm_tts_dir, 0775);
 ?>Creating Feature Code.<br>
 <?php
 // Register FeatureCode - Weather by Zip;
-$fcc = new featurecode('weatherzip', 'weatherzip');
-$fcc->setDescription('Weather by Zip Code');
-$fcc->setDefault('*947');
+$fcc = new featurecode('tidecity', 'tidecity');
+$fcc->setDescription('Tide by City');
+$fcc->setDefault('*8433');
 $fcc->update();
 unset($fcc);
 ?>

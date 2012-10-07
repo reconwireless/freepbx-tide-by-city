@@ -1,4 +1,4 @@
-Un Installing U.S. Weather by Zip Code.<br>
+Un Installing U.S. Tide by City.<br>
 <?php
 
 if ( (isset($amp_conf['ASTVARLIBDIR'])?$amp_conf['ASTVARLIBDIR']:'') == '') {
@@ -13,7 +13,7 @@ if ( file_exists($astlib_path."/agi-bin/propolys-tts.agi") ) {
 	}
 }
 print 'Deleting the cron manager entries for this module.<br>';
-$sql = "DELETE FROM cronmanager WHERE module = 'weatherzip'";
+$sql = "DELETE FROM cronmanager WHERE module = 'tidecity'";
 $check = $db->query($sql);
 if (DB::IsError($check))
 {

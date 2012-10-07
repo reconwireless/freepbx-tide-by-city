@@ -20,23 +20,23 @@ if ( (isset($amp_conf['ASTVARLIBDIR'])?$amp_conf['ASTVARLIBDIR']:'') == '') {
 $tts_astsnd_path = $astlib_path."/sounds/tts/";
 
 /* this function unused??
-function weatherzip_weatherzip($c) {
+function tidecity_tidecity($c) {
 	global $ext;
 	global $asterisk_conf;
 
-	$date = weatheroptions_getconfig();
+	$date = tideoptions_getconfig();
 	$ttsengine = $date[0];
 	
 
-	$id = "app-weatherzip"; // The context to be included
+	$id = "app-tidecity"; // The context to be included
 	
 	$ext->addInclude('from-internal-additional', $id); // Add the include from from-internal
 	$ext->add($id, $c, '', new ext_goto('1', 's', $ttsengine));
 }
   end unused section */
 
-function weatherzip_get_config($engine) {
-	$modulename = 'weatherzip';
+function tidecity_get_config($engine) {
+	$modulename = 'tidecity';
 	
 	// This generates the dialplan
 	global $ext;  
@@ -65,7 +65,7 @@ function weatherzip_get_config($engine) {
 
 function weatheroptions_getconfig() {
 	require_once 'DB.php';
-	$sql = "SELECT * FROM weatheroptions LIMIT 1";
+	$sql = "SELECT * FROM tideoptions LIMIT 1";
 	$results= sql($sql, "getAll");
 	$tmp = $results[0][4];
 	$tmp = eregi_replace('"', '', $tmp);
@@ -76,7 +76,7 @@ function weatheroptions_getconfig() {
 	return $results[0];
 }
 
-function weatheroptions_saveconfig() {
+function tideoptions_saveconfig() {
 
 	require_once 'DB.php';
 
@@ -87,7 +87,7 @@ function weatheroptions_saveconfig() {
 
 
 	# Make SQL thing
-	$sql = "UPDATE `weatheroptions` SET";
+	$sql = "UPDATE `tideoptions` SET";
 	$sql .= " `engine`='{$engine}',";
 	$sql .= " `wgroundkey`='{$wgroundkey}'";
 	$sql .= " LIMIT 1;";
@@ -106,8 +106,8 @@ function weatherzip_vercheck() {
 // returns true if a new version is available
 	$newver = false;
 	if ( function_exists(xml2array)){
-		$module_local = xml2array("modules/weatherzip/module.xml");
-		$module_remote = xml2array("https://raw.github.com/POSSA/freepbx-weather-by-zip/master/module.xml");
+		$module_local = xml2array("modules/tidecity/module.xml");
+		$module_remote = xml2array("https://raw.github.com/reconwireless/freepbx-tide-by-city/master/module.xml");
 		if ( $foo= empty($module_local) or $bar = empty($module_remote) )
 			{
 			//  if either array is empty skip version check

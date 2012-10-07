@@ -1,6 +1,6 @@
-freepbx-weather-by-zip
+freepbx-tide-by-city
 ======================
 
-FreePBX module, reads back weather forcast from dtmf zip code input
+FreePBX module, reads back tide from dtmf zip code input
 
-Weather by Zip Code allow you to retrieve current weather information from any touchtone phone using nothing more than your PBX connected to the Internet. You key in any of 42,740 U.S. Zip Codes using a touchtone phone. The report is downloaded, converted to an audio file, and played back to you.
+Tide by city allows you to retrieve current tide information from any touchtone phone using nothing more than your PBX connected to the Internet. You key in any of 42,740 U.S. Zip Codes using a touchtone phone. The report is downloaded, converted to an audio file, and played back to you.
