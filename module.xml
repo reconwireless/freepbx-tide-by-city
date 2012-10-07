@@ -1,7 +1,7 @@
 <module>
 	<rawname>tidecity</rawname>
 	<name>Tide by City</name>
-	<version>1.0.0.1</version>
+	<version>0.0.0.2</version>
 	<license>GNU GPL2</license>
 	<type>setup</type>
 	<category>Other</category>
@@ -13,6 +13,7 @@
                 Provide U.S. TIDES by City
         </description>
 	 <changelog>
+	 		*0.0.0.2 Added weather module back in for testing
 			*0.0.0.1 1st Module trial fork from POSSA weather by zip 
 			*0.0.0* 1st Module trial fork from POSSA weather by zip  
         </changelog>
