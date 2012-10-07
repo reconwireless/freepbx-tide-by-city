@@ -49,6 +49,9 @@ echo "<option".(($date[0]=='noaa-swift')?' selected':'').">noaa-swift</option>\n
 echo "<option".(($date[0]=='tide-wunderground-flite')?' selected':'').">tide-wunderground-flite</option>\n";
 echo "<option".(($date[0]=='tide-wunderground-swift')?' selected':'').">tide-wunderground-swift</option>\n";
 echo "<option".(($date[0]=='tide-wunderground-googletts')?' selected':'').">tide-wunderground-googletts</option>\n";
+echo "<option".(($date[0]=='wunderground-flite')?' selected':'').">wunderground-flite</option>\n";
+echo "<option".(($date[0]=='wunderground-swift')?' selected':'').">wunderground-swift</option>\n";
+echo "<option".(($date[0]=='wunderground-googletts')?' selected':'').">wunderground-googletts</option>\n";
 ?>
 </select>
 <br><a href="#" class="info">Wunderground API KEY:<span>Input free API key from registration with http://wunderground.com weather service</span></a>
@@ -63,7 +66,7 @@ echo "<option".(($date[0]=='tide-wunderground-googletts')?' selected':'').">tide
 <br><br><input type="submit" value="Submit" name="B1"><br>
 
 <center><br>
-The module is forked by reconwireless from the developer community at <a target="_blank" href="http://pbxossa.org"> PBX Open Source Software Alliance</a>.  Support, documentation and current versions are available at the module <a target="_blank" href="https://github.com/reconwireless/freepbx-tide-by-city">dev site</a></center>
+The module is forked by reconwireless from the developer community at <a target="_blank" href="http://pbxossa.org"> PBX Open Source Software Alliance</a>.  Support, documentation and current versions are available at the tide module <a target="_blank" href="https://github.com/reconwireless/freepbx-tide-by-city">reconwireless dev site</a></center>
 <?php
 print '<p align="center" style="font-size:11px;">The Weather by Zip and Google Weather scripts were created and are currently maintaned by <a target="_blank" href="http://www.nerdvittles.com">Nerd Vittles</a>.';
 
