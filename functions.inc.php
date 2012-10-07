@@ -63,7 +63,7 @@ function tidecity_get_config($engine) {
 	}
 }
 
-function weatheroptions_getconfig() {
+function tideoptions_getconfig() {
 	require_once 'DB.php';
 	$sql = "SELECT * FROM tideoptions LIMIT 1";
 	$results= sql($sql, "getAll");
@@ -101,7 +101,7 @@ $tts_engines = array("text2wave", "flite", "swift");
 $config = parse_amportal_conf( "/etc/amportal.conf" );
 
 
-function weatherzip_vercheck() {
+function tidezip_vercheck() {
 // compare version numbers of local module.xml and remote module.xml 
 // returns true if a new version is available
 	$newver = false;
