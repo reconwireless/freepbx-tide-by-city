@@ -1,6 +1,6 @@
 <module>
 	<rawname>tidecity</rawname>
-	<name>Tide by city</name>
+	<name>Tide by City</name>
 	<version>1.0.0.0</version>
 	<license>GNU GPL2</license>
 	<type>setup</type>
