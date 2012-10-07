@@ -101,7 +101,7 @@ $tts_engines = array("text2wave", "flite", "swift");
 $config = parse_amportal_conf( "/etc/amportal.conf" );
 
 
-function tidezip_vercheck() {
+function tidecity_vercheck() {
 // compare version numbers of local module.xml and remote module.xml 
 // returns true if a new version is available
 	$newver = false;

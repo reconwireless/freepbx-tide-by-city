@@ -17,7 +17,7 @@ $online_updates = $cm->updates_enabled() ? true : false;
 
 // check if new version of module is available
 if ($online_updates && $foo = tidecity_vercheck()) {
-	print "<br>A <b>new version</b> of this module is available from the <a target='_blank' href='http://reconwireless.com'>Reconnaissance Communications</a><br>";
+	print "<br>A <b>new version</b> of this module is available from the <a target='_blank' href='http://github.com/reconwireless/freepbx-tide-by-city/downloads'>Reconnaissance Communications</a><br>";
 }
 
 //tts_findengines()
