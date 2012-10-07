@@ -19,11 +19,11 @@ if ( (isset($amp_conf['ASTVARLIBDIR'])?$amp_conf['ASTVARLIBDIR']:'') == '') {
 ?><br>Installing Default Configuration values.<br>
 <?php
 
-$sql ="INSERT INTO weatheroptions (engine, wgroundkey) ";
+$sql ="INSERT INTO tideoptions (engine, wgroundkey) ";
 $sql .= "               VALUES ('noaa-flite',        '')";
 $check = $db->query($sql);
 if (DB::IsError($check)) {
-        die_freepbx( "Can not create default values in `weatheroptions` table: " . $check->getMessage() .  "\n");
+        die_freepbx( "Can not create default values in `tideoptions` table: " . $check->getMessage() .  "\n");
 }
 
 // Add dialplan include to asterisk conf file
@@ -94,7 +94,7 @@ $parm_tts_dir = '/var/lib/asterisk/sounds/tts';
 if (!is_dir ($parm_tts_dir)) mkdir ($parm_tts_dir, 0775);
 ?>Creating Feature Code.<br>
 <?php
-// Register FeatureCode - Weather by Zip;
+// Register FeatureCode - Tide by City;
 $fcc = new featurecode('tidecity', 'tidecity');
 $fcc->setDescription('Tide by City');
 $fcc->setDefault('*8433');

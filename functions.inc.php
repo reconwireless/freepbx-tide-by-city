@@ -107,7 +107,7 @@ function tidezip_vercheck() {
 	$newver = false;
 	if ( function_exists(xml2array)){
 		$module_local = xml2array("modules/tidecity/module.xml");
-		$module_remote = xml2array("https://raw.github.com/reconwireless/freepbx-tide-by-city/master/module.xml");
+		$module_remote = xml2array("https://raw.github.com/reconwireless/freepbx-tide-by-city/working/module.xml");
 		if ( $foo= empty($module_local) or $bar = empty($module_remote) )
 			{
 			//  if either array is empty skip version check
