@@ -52,10 +52,15 @@ echo "<option".(($date[0]=='tide-wunderground-googletts')?' selected':'').">tide
 echo "<option".(($date[0]=='wunderground-flite')?' selected':'').">wunderground-flite</option>\n";
 echo "<option".(($date[0]=='wunderground-swift')?' selected':'').">wunderground-swift</option>\n";
 echo "<option".(($date[0]=='wunderground-googletts')?' selected':'').">wunderground-googletts</option>\n";
+echo "<option".(($date[0]=='recon-tide-flite')?' selected':'').">recon-tide-flite</option>\n";
 ?>
 </select>
 <br><a href="#" class="info">Wunderground API KEY:<span>Input free API key from registration with http://wunderground.com weather service</span></a>
 <input type="text" name="wgroundkey" size="27" value="<?php echo $date[1]; ?>">  <a href="javascript: return false;" class="info"> 
+<br><a href="#" class="info">Tide City:<span>Input City</span></a>
+<input type="text" name="wgroundcity" size="27" value="<?php echo $wcity[1]; ?>">  <a href="javascript: return false;" class="info"> 
+<br><a href="#" class="info">Tide State:<span>Input two digit state abbreviation</span></a>
+<input type="text" name="wgroundstate" size="27" value="<?php echo $wstate[1]; ?>">  <a href="javascript: return false;" class="info"> 
 <br><br>key:<br>
 <b>noaa</b> - National Oceanic and Atmospheric Administration (USA weather service)<br>
 <b>wunderground</b> - Weather API provided by wunderground.com<br>
