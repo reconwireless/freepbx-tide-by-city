@@ -17,7 +17,7 @@ $online_updates = $cm->updates_enabled() ? true : false;
 
 // check if new version of module is available
 if ($online_updates && $foo = tidecity_vercheck()) {
-	print "<br>A <b>new version</b> of this module is available from the <a target='_blank' href='http://github.com/reconwireless/freepbx-tide-by-city/downloads'>Reconnaissance Communications</a><br>";
+	print "<br>A <b>new version</b> of the Tide City module is available from the <a target='_blank' href='http://github.com/reconwireless/freepbx-tide-by-city/downloads'>Reconwireless Repository on github</a><br>";
 }
 
 //tts_findengines()
@@ -57,10 +57,10 @@ echo "<option".(($date[0]=='recon-tide-flite')?' selected':'').">recon-tide-flit
 </select>
 <br><a href="#" class="info">Wunderground API KEY:<span>Input free API key from registration with http://wunderground.com weather service</span></a>
 <input type="text" name="wgroundkey" size="27" value="<?php echo $date[1]; ?>">  <a href="javascript: return false;" class="info"> 
-<br><a href="#" class="info">Tide City:<span>Input City</span></a>
+<br><a href="#" class="info">Tide City:<span>Input US City</span></a>
 <input type="text" name="wgroundcity" size="27" value="<?php echo $wcity[1]; ?>">  <a href="javascript: return false;" class="info"> 
 <br><a href="#" class="info">Tide State:<span>Input two digit state abbreviation</span></a>
-<input type="text" name="wgroundstate" size="27" value="<?php echo $wstate[1]; ?>">  <a href="javascript: return false;" class="info"> 
+<input type="text" name="wgroundstate" size="02" value="<?php echo $wstate[1]; ?>">  <a href="javascript: return false;" class="info"> 
 <br><br>key:<br>
 <b>noaa</b> - National Oceanic and Atmospheric Administration (USA weather service)<br>
 <b>wunderground</b> - Weather API provided by wunderground.com<br>

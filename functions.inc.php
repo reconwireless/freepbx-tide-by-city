@@ -92,6 +92,8 @@ function tideoptions_saveconfig() {
 	$sql = "UPDATE `tideoptions` SET";
 	$sql .= " `engine`='{$engine}',";
 	$sql .= " `wgroundkey`='{$wgroundkey}'";
+	$sql .= " `wgroundkey`='{$wgroundcity}'";
+	$sql .= " `wgroundkey`='{$wgroundstate}'";
 	$sql .= " LIMIT 1;";
 
 	sql($sql);
