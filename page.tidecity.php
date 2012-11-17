@@ -58,9 +58,9 @@ echo "<option".(($date[0]=='recon-tide-flite')?' selected':'').">recon-tide-flit
 <br><a href="#" class="info">Wunderground API KEY:<span>Input free API key from registration with http://wunderground.com weather service</span></a>
 <input type="text" name="wgroundkey" size="27" value="<?php echo $date[1]; ?>">  <a href="javascript: return false;" class="info"> 
 <br><a href="#" class="info">Tide City:<span>Input US City</span></a>
-<input type="text" name="wgroundcity" size="27" value="<?php echo $wcity[1]; ?>">  <a href="javascript: return false;" class="info"> 
+<input type="text" name="wgroundcity" size="27" value="<?php echo $date[2]; ?>">  <a href="javascript: return false;" class="info"> 
 <br><a href="#" class="info">Tide State:<span>Input two digit state abbreviation</span></a>
-<input type="text" name="wgroundstate" size="02" value="<?php echo $wstate[1]; ?>">  <a href="javascript: return false;" class="info"> 
+<input type="text" name="wgroundstate" size="02" value="<?php echo $date[3]; ?>">  <a href="javascript: return false;" class="info"> 
 <br><br>key:<br>
 <b>noaa</b> - National Oceanic and Atmospheric Administration (USA weather service)<br>
 <b>wunderground</b> - Weather API provided by wunderground.com<br>
