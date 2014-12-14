@@ -1,10 +1,9 @@
 <module>
 	<rawname>tidecity</rawname>
 	<name>Tide by City</name>
-	<version>0.0.0.4</version>
+	<version>0.0.0.5</version>
 	<license>GNU GPL2</license>
-	<type>setup</type>
-	<category>Other</category>
+	<category>Applications</category>
 	<menuitems>
 		<tidecity>Tide by City</tidecity>
 	</menuitems>
@@ -13,6 +12,7 @@
                 Provide U.S. TIDES by City
         </description>
 	 <changelog>
+			*0.0.0.5 clean up of interface
 			*0.0.0.4 additional changes to tide interface
 			*0.0.0.3 Added GUI entry for city and zip
 	 		*0.0.0.2 Added weather module back in for testing
