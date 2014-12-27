@@ -1,11 +1,4 @@
 Installing U.S. Tide by City Module<br>
-<h5>Zip Code Database (v1.0)</h5>
-This zip database is provided free to anyone who wants
-it with the request that anyone who benefits from it
-please drop me a quick email and let me know how
-you're using it. Also, if you wish to contribute to
-this project or improve upon the database that is 
-also welcome.<br>novak@linenoize.com<br>
 <?php
 if ( (isset($amp_conf['ASTVARLIBDIR'])?$amp_conf['ASTVARLIBDIR']:'') == '') {
 	$astlib_path = "/var/lib/asterisk";
@@ -19,8 +12,8 @@ if ( (isset($amp_conf['ASTVARLIBDIR'])?$amp_conf['ASTVARLIBDIR']:'') == '') {
 ?><br>Installing Default Configuration values.<br>
 <?php
 
-$sql ="INSERT INTO tideoptions (engine, wgroundkey) ";
-$sql .= "               VALUES ('noaa-flite',        '')";
+$sql ="INSERT INTO tideoptions (engine, wgroundkey, wgroundcity, wgroundstate) ";
+$sql .= "               VALUES ('recon-tide-flite',        '',        '',        '')";
 $check = $db->query($sql);
 if (DB::IsError($check)) {
         die_freepbx( "Can not create default values in `tideoptions` table: " . $check->getMessage() .  "\n");

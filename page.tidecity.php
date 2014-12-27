@@ -18,6 +18,9 @@ if(count($_POST)){
 }
 	$date = tideoptions_getconfig();
 	$selected = ($date[0]);
+	$selected = ($date[1]);
+	$selected = ($date[2]);
+	$selected = ($date[3]);
 
 //  Get current featurecode from FreePBX registry
 $fcc = new featurecode('tidecity', 'tidecity');
@@ -36,8 +39,6 @@ Select the Text To Speech engine and Forecast source combination you wish the Ti
 
 <select size="1" name="engine">
 <?php
-echo "<option".(($date[0]=='tide-wunderground-flite')?' selected':'').">tide-wunderground-flite</option>\n";
-echo "<option".(($date[0]=='tide-wunderground-swift')?' selected':'').">tide-wunderground-swift</option>\n";
 echo "<option".(($date[0]=='recon-tide-flite')?' selected':'').">recon-tide-flite</option>\n";
 ?>
 </select>
@@ -46,10 +47,42 @@ echo "<option".(($date[0]=='recon-tide-flite')?' selected':'').">recon-tide-flit
 <br><a href="#" class="info">Tide City:<span>Input US City</span></a>
 <input type="text" name="wgroundcity" size="27" value="<?php echo $date[2]; ?>">  <a href="javascript: return false;" > 
 <br><a href="#" class="info">Tide State:<span>Input two digit state abbreviation</span></a>
-<input type="text" name="wgroundstate" size="02" value="<?php echo $date[3]; ?>">  <a href="javascript: return false;" > 
+<input type="text" name="wgroundstate" size="04" value="<?php echo $date[3]; ?>">  <a href="javascript: return false;" > 
 
 
 		
-<br><br><input type="submit" value="Submit" name="B1"><br>
+<br><br><input type="submit" value="Submit" name="B1"><b
+////////////////
+// get user data from module
 
 
+// get api key
+$apikey = $date[1]);
+$city = $date[2]);
+$state = $date[3]);
+?>
+ <br><h5>Sample Tide Info:<hr></h5>
+
+<?php
+$json = file_get_contents('http://api.wunderground.com/api/$apikey/tide/q/$state/$city.json'); 
+$data = json_decode($json);
+
+foreach($data->tide->tideInfo as $item){
+echo 'Tide Site :'. $item->tideSite .'<br/>';
+echo 'Latitude : '. $item->lat .'<br/>';
+echo 'Longtitude : '. $item->lon .'<br/>';
+echo 'Units : '.$item->units .'<br/>';
+echo 'Type : ' .$item->type .'<br/>';
+echo 'Time Zone Name: '. $item->tzname.'<br/>';
+foreach($data->tide->tideSummary as $item)
+echo 'Time :'. $item->date->pretty, ' Change :'. $item->data->type, '   '. $item->data->height .'<br/>';
+
+}
+?>
+
+
+
+
+
+
+  
